@@ -1,7 +1,11 @@
 import Typography from "typography"
-import Wordpress2016 from 'typography-theme-wordpress-2016';
 
-const typography = new Typography(Wordpress2016)
+const typography = new Typography({
+  baseFontSize: '18px',
+  baseLineHeight: 1.5,
+  headerFontFamily: ['Open Sans', 'sans-serif'],
+  bodyFontFamily: ['Open Sans', 'serif'],
+});
 
 export const { rhythm } = typography
 export default typography
