@@ -15,11 +15,14 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-remark`,
     {
-      resolve: `gatsby-plugin-scroll-reveal`,
+      resolve: `gatsby-plugin-manifest`,
       options: {
-          threshold: 1, // Percentage of an element's area that needs to be visible to launch animation
-          once: true, // Defines if animation needs to be launched once
-          disable: false, // Flag for disabling animations
+        name: `gatsby-starter-default`,
+        short_name: `starter`,
+        start_url: `/`,
+        background_color: `#663399`,
+        theme_color: `#663399`,
+        display: `minimal-ui`,
       },
     },
     {
@@ -32,25 +35,36 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/markdown-pages`,
-        name: `markdown-pages`,
+        path: `${__dirname}/content/newsletters`,
+        name: `newsletters`,
       },
     },
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
+        path: `${__dirname}/content/pages`,
+        name: `pages`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/posts`,
+        name: `posts`,
       },
     },
     {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-scroll-reveal`,
+      options: {
+          threshold: 1, // Percentage of an element's area that needs to be visible to launch animation
+          once: true, // Defines if animation needs to be launched once
+          disable: false, // Flag for disabling animations
       },
     },
   ],

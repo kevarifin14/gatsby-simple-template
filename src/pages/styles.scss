@@ -1,10 +1,29 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans');
 
-$family-primary: "Open Sans";
-@import "~bulma/bulma.sass";
-
-
-.gradient-background {
-    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+header .stripes {
+  display: grid;
+  grid: repeat(5, 200px) / repeat(10, 1fr);
+  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
 }
+
+header .stripes :nth-child(1) {
+  grid-column: span 3;
+  // background: linear-gradient(100grad,rgba(243,251,255,.4),rgba(243,251,255,.15) 20%,rgba(243,251,255,0));
+}
+
+header .stripes :nth-child(2) {
+  grid-area: 3 / span 3 / auto / -1;
+  // background: linear-gradient(100grad,rgba(0,119,204,0),rgba(0,119,204,.05) 40%,rgba(0,119,204,.35));
+}
+
+header .stripes :nth-child(3) {
+  grid-row: 4;
+  grid-column: span 5;
+  // background: linear-gradient(100grad,#fff 50%,hsla(0,0%,100%,0));
+}
+
+// header .stripes {
+//   transform: skewY(-12deg);
+//   transform-origin: 0;
+// }

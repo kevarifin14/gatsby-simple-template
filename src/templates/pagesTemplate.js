@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import SEO from 'components/seo';
 import { rhythm } from 'utils';
 
-export default function Template({ data }) {
+export default function PageTemplate({ data }) {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const { frontmatter: { title }, html } = markdownRemark
 
@@ -30,11 +30,10 @@ export default function Template({ data }) {
 }
 
 export const pageQuery = graphql`
-  query($path: String!) {
-    markdownRemark(frontmatter: { path: { eq: $path } }) {
+  query {
+    markdownRemark {
       html
       frontmatter {
-        path
         title
       }
     }
